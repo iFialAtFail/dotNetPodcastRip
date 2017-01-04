@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetPodcastRip", "dotNetPodcastRip\dotNetPodcastRip.csproj", "{6648317F-58BE-42BD-987C-EA21F73A2CDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNRPodcastRipForm", "DNRPodcastRipForm\DNRPodcastRipForm.csproj", "{B7DE8BEA-CE67-4A32-81F4-09B8FD31E2A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6648317F-58BE-42BD-987C-EA21F73A2CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6648317F-58BE-42BD-987C-EA21F73A2CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6648317F-58BE-42BD-987C-EA21F73A2CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6648317F-58BE-42BD-987C-EA21F73A2CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7DE8BEA-CE67-4A32-81F4-09B8FD31E2A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DE8BEA-CE67-4A32-81F4-09B8FD31E2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DE8BEA-CE67-4A32-81F4-09B8FD31E2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DE8BEA-CE67-4A32-81F4-09B8FD31E2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
