@@ -18,7 +18,7 @@ namespace DNRPodcastRipForm
         //Get list of links
         List<Uri> uriLinks = new List<Uri>();
         List<string> filesFound = new List<string>();
-        string path = @"C:\Users\USER\Documents\Podcast\";
+        string path;
 
 
         public Form1()
@@ -28,7 +28,16 @@ namespace DNRPodcastRipForm
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 8; i++)
+            //Make sure we have correct path here.
+            path = lblPathLocation.Text + "/";
+
+            if (String.IsNullOrWhiteSpace(path))
+            {
+                MessageBox.Show("Please Select a download location");
+                return;
+            }
+
+            for (int i = 0; i < 2; i++)
             {
 
                 using (WebClient wc = new WebClient())
@@ -76,14 +85,18 @@ namespace DNRPodcastRipForm
 
         private void setupFileListbox()
         {
-            DirectoryInfo d = new DirectoryInfo(path);//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles("*.mp3"); //Getting Text files
-            filesFound.Clear();
-            foreach (FileInfo file in Files)
+            if (path != null)
             {
-                filesFound.Add(file.Name);
+                DirectoryInfo d = new DirectoryInfo(path);//Assuming Test is your Folder
+                FileInfo[] Files = d.GetFiles("*.mp3"); //Getting Text files
+                filesFound.Clear();
+                foreach (FileInfo file in Files)
+                {
+                    filesFound.Add(file.Name);
+                }
+                listBoxFileList.DataSource = filesFound;
             }
-            listBoxFileList.DataSource = filesFound;
+            
         }
 
         private void LoadLinksFromWebsite()
@@ -113,6 +126,17 @@ namespace DNRPodcastRipForm
             {
                 uriLinks.Add(new Uri(item, UriKind.Absolute));
                 //Console.WriteLine(item);
+            }
+        }
+
+        private void btnSelectFolder_Click(object sender, EventArgs e)
+        {
+            using (var folderDialog = new FolderBrowserDialog())
+            {
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    lblPathLocation.Text = folderDialog.SelectedPath;
+                }
             }
         }
     }

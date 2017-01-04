@@ -36,6 +36,8 @@
             this.progressBarDownload = new System.Windows.Forms.ProgressBar();
             this.lblFileCount = new System.Windows.Forms.Label();
             this.lblFilesAvailableCount = new System.Windows.Forms.Label();
+            this.lblPathLocation = new System.Windows.Forms.Label();
+            this.btnSelectFolder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDownload
@@ -116,11 +118,33 @@
             this.lblFilesAvailableCount.TabIndex = 7;
             this.lblFilesAvailableCount.Text = "label3";
             // 
+            // lblPathLocation
+            // 
+            this.lblPathLocation.AutoSize = true;
+            this.lblPathLocation.BackColor = System.Drawing.SystemColors.Info;
+            this.lblPathLocation.Location = new System.Drawing.Point(174, 35);
+            this.lblPathLocation.Name = "lblPathLocation";
+            this.lblPathLocation.Size = new System.Drawing.Size(91, 13);
+            this.lblPathLocation.TabIndex = 8;
+            this.lblPathLocation.Text = "No Path Selected";
+            // 
+            // btnSelectFolder
+            // 
+            this.btnSelectFolder.Location = new System.Drawing.Point(34, 30);
+            this.btnSelectFolder.Name = "btnSelectFolder";
+            this.btnSelectFolder.Size = new System.Drawing.Size(112, 23);
+            this.btnSelectFolder.TabIndex = 9;
+            this.btnSelectFolder.Text = "Select Location";
+            this.btnSelectFolder.UseVisualStyleBackColor = true;
+            this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 544);
+            this.Controls.Add(this.btnSelectFolder);
+            this.Controls.Add(this.lblPathLocation);
             this.Controls.Add(this.lblFilesAvailableCount);
             this.Controls.Add(this.lblFileCount);
             this.Controls.Add(this.progressBarDownload);
@@ -147,6 +171,8 @@
         private System.Windows.Forms.ProgressBar progressBarDownload;
         private System.Windows.Forms.Label lblFileCount;
         private System.Windows.Forms.Label lblFilesAvailableCount;
+        private System.Windows.Forms.Label lblPathLocation;
+        private System.Windows.Forms.Button btnSelectFolder;
     }
 }
 
