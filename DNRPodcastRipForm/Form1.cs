@@ -37,12 +37,14 @@ namespace DNRPodcastRipForm
                 return;
             }
 
-            for (int i = 0; i < 2; i++)
-            {
+            
 
+            for (int i = 0; i < listBoxAllFilesAvailable.SelectedItems.Count; i++)
+            {
+                
                 using (WebClient wc = new WebClient())
                 {
-                    string filename = Path.GetFileName(uriLinks[i].LocalPath);
+                    string filename = Path.GetFileName(listBoxAllFilesAvailable.SelectedItems[i].ToString());
                     if (File.Exists(path + filename))
                     {
                         //Console.WriteLine("File {0} exists!", filename);
@@ -50,7 +52,7 @@ namespace DNRPodcastRipForm
                     }
                     wc.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadCompleteMessage);
                     wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
-                    wc.DownloadFileAsync(uriLinks[i], path + filename);
+                    wc.DownloadFileAsync(new Uri(listBoxAllFilesAvailable.SelectedItems[i].ToString(),UriKind.Absolute), path + filename);
                     //Console.WriteLine("{0} has started downloading.", filename);
                 }
             }
